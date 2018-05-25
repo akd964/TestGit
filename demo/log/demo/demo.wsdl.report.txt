@@ -1,0 +1,14 @@
+
+
+Importing file: D:\IIB\Workspace\GetStartedWithIIB\demo\demo.wsdl
+
+The WSDL import will proceed with bindings demoHttpBinding.
+Creating wsdl schema document for file:///D:/IIB/Workspace/GetStartedWithIIB/demo/demo.wsdl.
+Parsing wsdl binding {http://demo}demoHttpBinding.
+Parsing wsdl binding input operation1.
+Parsing wsdl binding output operation1.
+Processing doc style for operation operation1.
+Populating WSDL schema demo.xsd.
+Creating file demo.xsd in the workspace.
+Creating file demo_InlineSchema1.xsd in the workspace.
+Copying source WSDL demo.wsdl to demo.wsdl.

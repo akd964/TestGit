@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="demo" targetNamespace="http://demo" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://demo" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:documentation>
+    <wsdl:appinfo source="WMQI_APPINFO">
+      <MRWSDLAppInfo imported="true">
+        <generatedXSD location="demo_InlineSchema1.xsd"/>
+        <binding hasEncoding="false" imported="true" name="demoHttpBinding" originalBindingStyle="document"/>
+      </MRWSDLAppInfo>
+    </wsdl:appinfo>
+  </wsdl:documentation>
+  <wsdl:types>
+    
+        <xsd:schema targetNamespace="http://demo" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions">
+      <xsd:include schemaLocation="demo_InlineSchema1.xsd"/>
+    </xsd:schema>
+    </wsdl:types>
+  <wsdl:message name="operation1RequestMsg">
+    <wsdl:part element="tns:operation1" name="operation1Parameters"/>
+  </wsdl:message>
+  <wsdl:message name="operation1ResponseMsg">
+    <wsdl:part element="tns:operation1Response" name="operation1Result"/>
+  </wsdl:message>
+  <wsdl:portType name="demo">
+    <wsdl:operation name="operation1">
+      <wsdl:input message="tns:operation1RequestMsg" name="operation1Request"/>
+      <wsdl:output message="tns:operation1ResponseMsg" name="operation1Response"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="demoHttpBinding" type="tns:demo">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="operation1">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="operation1Request">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="operation1Response">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="demoHttpService">
+    <wsdl:port binding="tns:demoHttpBinding" name="demoHttpPort">
+      <soap:address location="http://localhost:7800/demo"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
